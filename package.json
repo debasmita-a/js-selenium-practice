@@ -12,6 +12,7 @@
   "dependencies": {
     "js-selenium": "file:",
     "mocha": "^11.1.0",
+    "prettier": "^3.4.2",
     "selenium-webdriver": "^4.28.1"
   }
 }

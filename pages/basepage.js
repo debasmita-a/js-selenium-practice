@@ -1,4 +1,4 @@
-const {Browser, Builder} = require('selenium-webdriver');
+const {Browser, Builder, until} = require('selenium-webdriver');
 let driver = new Builder().forBrowser(Browser.CHROME).build();
 
 class BasePage{
@@ -8,6 +8,7 @@ class BasePage{
 
     async launchApp(url){
         await driver.get(url);
+        
         await driver.manage().window().maximize();
     }
 }

@@ -1,9 +1,9 @@
-const {By} = require('selenium-webdriver');
+const {By, until} = require('selenium-webdriver');
 
 class SignUpPage {
 
     #signupLink = By.linkText("Sign up");
-    #name = By.id("name");
+    #nameText = By.id("name");
     #email = By.id("email");
     #password = By.id("pass");
     #agreeCheck = By.id("agree");
@@ -15,7 +15,9 @@ class SignUpPage {
     }
  //FIXME : Below methods doesn't get evoked from the test block.
     async enterName(nameValue){
-        await driver.findElement(this.#name).sendKeys(nameValue);
+        //await driver.wait(until.elementsLocated(this.#nameText), 60000);
+        await driver.findElement(this.#nameText).click();
+        await driver.findElement(this.#nameText).sendKeys(nameValue);
     }
 
     async enterEmail(emailValue){

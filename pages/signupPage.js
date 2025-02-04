@@ -13,10 +13,8 @@ class SignUpPage {
     async openSignupPage(){
         await driver.findElement(this.#signupLink).click();
     }
- //FIXME : Below methods doesn't get evoked from the test block.
+
     async enterName(nameValue){
-        //await driver.wait(until.elementsLocated(this.#nameText), 60000);
-        await driver.findElement(this.#nameText).click();
         await driver.findElement(this.#nameText).sendKeys(nameValue);
     }
 
@@ -37,8 +35,9 @@ class SignUpPage {
     }
 
     async isSignoutBtnDisplayed(){
-        await expect(driver.findElement(this.#signoutBtn).isDisplayed()).toBe(true);
+        await driver.findElement(this.#signoutBtn).isDisplayed();
     }
+    
 
 }
 

@@ -1,4 +1,4 @@
-const {By, until} = require('selenium-webdriver');
+const {By, until, wait} = require('selenium-webdriver');
 
 class SignUpPage {
 
@@ -9,6 +9,7 @@ class SignUpPage {
     #agreeCheck = By.id("agree");
     #signupBtn = By.xpath("//button[text()='SIGN UP']");
     #signoutBtn = By.linkText("Sign out");
+    #signupToastMsg = By.xpath("//div[@id='toast-container']");
 
     async openSignupPage(){
         await driver.findElement(this.#signupLink).click();
@@ -35,7 +36,11 @@ class SignUpPage {
     }
 
     async isSignoutBtnDisplayed(){
-        await driver.findElement(this.#signoutBtn).isDisplayed();
+        return await driver.findElement(this.#signoutBtn).isDisplayed();
+    }
+
+    async getToastMessage(){
+        return await driver.findElement(this.#signupToastMsg).getText();
     }
     
 

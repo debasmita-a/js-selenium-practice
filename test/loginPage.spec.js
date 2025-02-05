@@ -10,7 +10,7 @@ describe('Login Page Tests - Let Code', ()=>{
         await basePage.launchApp("https://letcode.in/signin");
     })
     
-    it.only('User Login Test', async ()=>{
+    it('User Login Test', async ()=>{
         await loginPage.clickLoginLink();
         await loginPage.enterEmail("debasmita.adhikari9@gmail.com");
         await loginPage.enterPassword("Test123");

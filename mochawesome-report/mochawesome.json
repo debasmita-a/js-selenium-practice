@@ -1,0 +1,204 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 1,
+    "pending": 0,
+    "failures": 2,
+    "start": "2025-02-05T12:08:13.047Z",
+    "end": "2025-02-05T12:08:37.665Z",
+    "duration": 24618,
+    "testsRegistered": 3,
+    "passPercent": 33.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8a16f73a-a2e3-4cde-a0e0-76b6e492a1b6",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "003d7d38-b431-4559-b574-3f993ef30d4f",
+          "title": "Login Page Tests - Let Code",
+          "fullFile": "C:\\Users\\in8DebAd\\eclipse-workspace\\javascript\\js-selenium\\test\\loginPage.spec.js",
+          "file": "\\test\\loginPage.spec.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: Launch App in \"Login Page Tests - Let Code\"",
+              "fullTitle": "Login Page Tests - Let Code \"before all\" hook: Launch App in \"Login Page Tests - Let Code\"",
+              "timedOut": null,
+              "duration": 9634,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": null,
+              "context": null,
+              "code": "await basePage.launchApp(\"https://letcode.in/signin\");",
+              "err": {},
+              "uuid": "057ad235-2936-4a07-8ed8-d5bc3113755c",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User Login Test",
+              "fullTitle": "Login Page Tests - Let Code User Login Test",
+              "timedOut": null,
+              "duration": 3059,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await loginPage.clickLoginLink();\nawait loginPage.enterEmail(\"debasmita.adhikari9@gmail.com\");\nawait loginPage.enterPassword(\"Test123\");\nawait loginPage.clickLoginBtn();\nexpect(await loginPage.getToastMessage()).to.include(\"Welcome\");",
+              "err": {},
+              "uuid": "865b5ab8-82ce-4c68-8150-12d72bb14ab6",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "865b5ab8-82ce-4c68-8150-12d72bb14ab6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3059,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        },
+        {
+          "uuid": "68a5c057-d149-454d-995b-beccdacb4699",
+          "title": "Sign up - LetCode tests",
+          "fullFile": "C:\\Users\\in8DebAd\\eclipse-workspace\\javascript\\js-selenium\\test\\signupPage.spec.js",
+          "file": "\\test\\signupPage.spec.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook: Launch app in \"Sign up - LetCode tests\"",
+              "fullTitle": "Sign up - LetCode tests \"before all\" hook: Launch app in \"Sign up - LetCode tests\"",
+              "timedOut": null,
+              "duration": 11725,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": null,
+              "context": null,
+              "code": "await basePage.launchApp(\"https://letcode.in/test\");",
+              "err": {},
+              "uuid": "32563984-7e5e-4f36-af76-4c6e78abd677",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "User should be able to signup successfully",
+              "fullTitle": "Sign up - LetCode tests User should be able to signup successfully",
+              "timedOut": null,
+              "duration": 10827,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await signupPage.openSignupPage();\nawait signupPage.enterName(\"Debasmita A\");\nawait signupPage.enterEmail(\"debasmita.adhikari9@gmail.com\");\nawait signupPage.enterPassword(\"Test123\");\nawait signupPage.checkAgree();\nawait signupPage.clickSignupBtn();\nexpect(await signupPage.isSignoutBtnDisplayed()).to.be(true);",
+              "err": {
+                "message": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"link text\",\"selector\":\"Sign out\"}\n  (Session info: chrome=132.0.6834.111)",
+                "estack": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"link text\",\"selector\":\"Sign out\"}\n  (Session info: chrome=132.0.6834.111)\n    at Object.throwDecodedError (node_modules\\selenium-webdriver\\lib\\error.js:521:15)\n    at parseHttpResponse (node_modules\\selenium-webdriver\\lib\\http.js:524:13)\n    at Executor.execute (node_modules\\selenium-webdriver\\lib\\http.js:456:28)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async thenableWebDriverProxy.execute (node_modules\\selenium-webdriver\\lib\\webdriver.js:745:17)\n    at async toWireValue (node_modules\\selenium-webdriver\\lib\\webdriver.js:149:15)\n    at async C:\\Users\\in8DebAd\\eclipse-workspace\\javascript\\js-selenium\\node_modules\\selenium-webdriver\\lib\\webdriver.js:195:16\n    at async forEachKey (node_modules\\selenium-webdriver\\lib\\webdriver.js:189:9)\n    at async convertKeys (node_modules\\selenium-webdriver\\lib\\webdriver.js:194:3)\n    at async thenableWebDriverProxy.execute (node_modules\\selenium-webdriver\\lib\\webdriver.js:743:22)",
+                "diff": null
+              },
+              "uuid": "15605332-cdcd-48e7-98ab-b3ea45b7132a",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "User should not be able to sign up with same emailID",
+              "fullTitle": "Sign up - LetCode tests User should not be able to sign up with same emailID",
+              "timedOut": null,
+              "duration": 779,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await signupPage.openSignupPage();\nawait signupPage.enterName(\"Debasmita A\");\nawait signupPage.enterEmail(\"debasmita.adhikari9@gmail.com\");\nawait signupPage.enterPassword(\"Test123\");\nawait signupPage.checkAgree();\nawait signupPage.clickSignupBtn();\n       expect(await signupPage.getToastMessage()).contains(\"Error: The email address is already in use by another account.\");",
+              "err": {
+                "message": "AssertionError: expected '' to include 'Error: The email address is already i…'",
+                "estack": "AssertionError: expected '' to include 'Error: The email address is already i…'\n    at Context.<anonymous> (test\\signupPage.spec.js:32:51)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+                "diff": null
+              },
+              "uuid": "d4df492d-9145-4486-9bfe-1a96af258cb2",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "15605332-cdcd-48e7-98ab-b3ea45b7132a",
+            "d4df492d-9145-4486-9bfe-1a96af258cb2"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 11606,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.1.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}

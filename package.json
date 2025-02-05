@@ -7,7 +7,7 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 60000"
+    "test": "mocha --no-timeouts --parallel --reporter mochawesome --require mochawesome/register"
   },
   "dependencies": {
     "chai": "^4.5.0",
